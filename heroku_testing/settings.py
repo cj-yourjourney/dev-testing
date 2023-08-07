@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vacq-k#d3^3%y))5o2v^_8)cz!izfp7_$omuav)1yn^*f@1cdu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['thawing-coast-72791-9e978b7f11ed.herokuapp.com']
 
 
 # Application definition
@@ -76,31 +76,31 @@ WSGI_APPLICATION = 'heroku_testing.wsgi.application'
 
 
 
-# keep this
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-# add this
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
-
-
+# # keep this
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'masteruser',
-#         'PASSWORD': 'mypassword',
-#         'HOST': 'heroku-testing-database.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
-#         'PORT': '5432'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+# # add this
+# import dj_database_url
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'masteruser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'heroku-testing-database.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
+    }
+}
 
 
 # DATABASES = {
