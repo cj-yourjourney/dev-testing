@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vacq-k#d3^3%y))5o2v^_8)cz!izfp7_$omuav)1yn^*f@1cdu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['thawing-coast-72791-9e978b7f11ed.herokuapp.com']
 
 
 # Application definition
