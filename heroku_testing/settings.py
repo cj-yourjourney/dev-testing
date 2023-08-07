@@ -74,16 +74,33 @@ WSGI_APPLICATION = 'heroku_testing.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+
+# keep this
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'masteruser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'heroku-testing-database.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# add this
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'masteruser',
+#         'PASSWORD': 'mypassword',
+#         'HOST': 'heroku-testing-database.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # DATABASES = {
