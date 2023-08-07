@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'masteruser',
         'PASSWORD': 'mypassword',
-        'HOST': 'database-django-tennie-club.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
+        'HOST': 'heroku-testing-database.cfiufp8zpfaj.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
